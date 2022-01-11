@@ -24,7 +24,7 @@ def dfs(x,y):
     dfs(x,y+1)
     return count
 
-# M, N, K가 빈칸을 두고 차레로 주어진다.
+# M, N, K가 빈칸을 두고 차례로 주어진다.
 M,N,K = map(int, input().split())
 count=0
 
