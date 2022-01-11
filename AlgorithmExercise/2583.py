@@ -67,6 +67,8 @@ for _ in range(K):
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 
+# (x-1,y), (x+1,y), (x,y-1), (x,y+1)의 순으로 큐에서 탐색된다.
+
 def bfs(x,y):
     global answer
     queue=deque()
@@ -74,15 +76,15 @@ def bfs(x,y):
     mtx[x][y]=1
     size=1
     while queue:
-        x,y=queue.popleft()
+        x,y=queue.popleft()     # 좌측상단부터 노드를 큐에 넣는다.
         for i in range(4):      # 상하좌우 탐색
             nx = x+dx[i]
             ny = y+dy[i]
             if 0<=nx<M and 0<=ny<N and mtx[nx][ny] == 0:    # 빗금없는 경우
-                mtx[nx][ny]=1   # 해당 영역의 좌표를 1로 바꿔가며
-                queue.append((nx,ny))
-                size += 1       # 분리된 영역 넓이를 체크한다.
-    res.append(size)
+                mtx[nx][ny]=1   # 큐에 들어갔으므로 방문표시로 1로 변경해준다.
+                queue.append((nx,ny))   # 영역의 넓이값이 된다.
+                size += 1       # 영역 개수를 체크한다.
+    res.append(size)    # 해당 영역의 넓이값 출력.
 
 # main
 res=[]
@@ -95,3 +97,13 @@ res.sort()      # 오름차순으로 각 영역의 넓이를 정렬한다.
 print(len(res)) # 첫째줄 출력. 영역의 개수를 출력한다.
 for i in res:   # 둘째줄 출력. 각 영여의 넓이를 오름차순으로 정렬한다.
     print(i, end=' ')
+
+# BFS의 원리
+# 탐색을 시작하는 부분(node)을 큐에 넣어준다.
+# 한번이라도 큐에 들어간 node는 방문표시를 해준다.
+
+# 그다음 아래의 과정을 반복한다.
+# 1. 큐에 든 노드 하나 꺼내기
+# 2. 꺼낸 노드와 '연결된' 노드중 방문하지 않은 노드를 방문하여 차례대로 큐에 삽입
+
+# 큐가 모두 비면 탐색 시작 위치부터 가까운 순대로 탐색이 완료된다.
