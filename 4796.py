@@ -5,7 +5,7 @@
 # 나누고 남은 수가 L의 값보다 클수도, 작을 수도 있다.
 # 이때는 최소 L의 값 이하여야한다.
 
-#sys를 이용했을때 72ms, 이용하지 않았을때 120ms가 걸림.
+#sys를 이용했을때 72ms, 이용하지 않았을때 120ms가 걸렸다.
 import sys
 input=sys.stdin.readline
 
