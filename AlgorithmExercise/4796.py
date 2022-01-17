@@ -5,11 +5,10 @@
 # 나누고 남은 수가 L의 값보다 클수도, 작을 수도 있다.
 # 이때는 최소 L의 값 이하여야한다.
 
-<<<<<<< HEAD:4796.py
+
 #sys를 이용했을때 72ms, 이용하지 않았을때 120ms가 걸렸다.
-=======
 #sys를 이용했을때 72ms, 이용하지 않았을때 120ms.
->>>>>>> ca7c1556a0c913e7fa95a4977677c798e4c87323:AlgorithmExercise/4796.py
+
 import sys
 input=sys.stdin.readline
 
