@@ -164,7 +164,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-
 function angle2_Callback(hObject, eventdata, handles)
 % hObject    handle to angle2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
